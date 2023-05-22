@@ -5,7 +5,7 @@
 					"Enjoy your <span class="text-yellow-100/95">day</span> with coffee<br>from
 					<span class="text-yellow-100/95">Kopi Sendja."</span>
 				</h1>
-				<a href="#menu" class="text-xl bg-yellow-100/95 text-stone-800 px-4 py-2 rounded hover:brightness-90 transition-all">See menus</a>
+				<a href="{{ route('menu') }}" class="text-xl bg-yellow-100/95 text-stone-800 px-4 py-2 rounded hover:brightness-90 transition-all">See menus</a>
 			</div>
 	</div>
 </x-app-layout>

@@ -12,7 +12,15 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $coffee = Menu::where('type', 'coffee')->get();
+        $snack = Menu::where('type', 'snack')->get();
+
+        $data = [
+            'coffee' => $coffee,
+            'snack' => $snack
+        ];
+
+        return view('menu', $data);
     }
 
     /**

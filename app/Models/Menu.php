@@ -9,9 +9,16 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $table = 'menus';
+
     protected $fillable = [
         'nama',
         'harga',
         'type'
     ];
+
+    public function transaction_details()
+    {
+        return $this->hasMany('App\Models\TransactionDetail');
+    }
 }

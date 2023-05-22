@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <x-nav-link :href="route('home')" :active="request()->routeIs('home2')">
+        <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
             {{ __('About') }}
         </x-nav-link>
 
