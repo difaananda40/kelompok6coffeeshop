@@ -1,10 +1,10 @@
 <nav>
     <div class="space-x-8 flex items-center justify-center pt-6">
-        <x-nav-link :href="route('home')" :active="request()->routeIs('home2')">
+        <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
             {{ __('Home') }}
         </x-nav-link>
 
-        <x-nav-link :href="route('home')" :active="request()->routeIs('home2')">
+        <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
             {{ __('Menu') }}
         </x-nav-link>
 
