@@ -37,7 +37,7 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function authenticate(): void
+    public function authenticate($request): void
     {
         $this->ensureIsNotRateLimited();
 
@@ -46,6 +46,15 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
+            ]);
+        }
+
+        $user = Auth::user();
+        if(!$user->approved) {
+            $request->session()->invalidate();
+
+            throw ValidationException::withMessages([
+                'email' => 'Account is not verified yet.',
             ]);
         }
 
